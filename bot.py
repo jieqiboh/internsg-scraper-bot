@@ -168,7 +168,7 @@ def addremove_input(update, context):
         else:
             update.message.reply_text(str(entryName) +" was not added!")
     elif context.user_data['addremove']=="remove":
-        if removeFromCategory(collectionName,entryName)==False:
+        if removeFromCategory(collectionName,entryName)==True:
             update.message.reply_text(str(entryName) +" was successfully removed!")
         else:
             update.message.reply_text(str(entryName) +" was not removed!")
