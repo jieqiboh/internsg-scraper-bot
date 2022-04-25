@@ -275,7 +275,11 @@ dispatcher.add_error_handler(error)
 import os
 
 def main():
-    port = os.getenv('PORT', default=8000)
-    updater.start_webhook(port=port)
+    PORT = int(os.environ.get('PORT', '8443'))
+    # add handlers
+    updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=TOKEN,
+                      webhook_url="https://internsg-scraper-bot.herokuapp.com/" + TOKEN)
 
 main()
