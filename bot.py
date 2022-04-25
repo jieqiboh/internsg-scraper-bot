@@ -70,8 +70,6 @@ def main_menu(update, context):
 
 #PREFERENCES
 def preferences_menu(update, context):
-    print(update)
-    print(context)
     update.callback_query.message.edit_text(preferences_menu_message(),reply_markup=preferences_menu_keyboard())
 #
 def addremoveCompany_menu(update, context):
@@ -136,7 +134,6 @@ def removejobtype_ftn(update, context):
     
 #END OF PREFERENCES
 def scrapedpostings_menu(update, context):
-    print(update)
     job_details = returnCategoryList("job_ids")
     for job in job_details:
         msg = ""
